@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Nav() {
   return (
     <>
-      <Link href="">
+      <Link href="/create-card">
         <a>
           <StyledButton>Add new Card</StyledButton>
         </a>
