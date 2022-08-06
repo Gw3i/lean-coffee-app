@@ -7,12 +7,6 @@ export async function getAllLeanCards() {
   const leanCards = await LeanCard.find();
 
   return leanCards.map(({ id, topic, author }) => {
-    return {
-      id,
-      topic,
-      author,
-    };
+    return { id, topic, author };
   });
 }
-
-
