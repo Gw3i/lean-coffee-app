@@ -8,6 +8,7 @@ import Link from "next/link";
 
 export async function getStaticProps() {
   const leanCards = await getAllLeanCards();
+
   return {
     props: { leanCards },
   };
