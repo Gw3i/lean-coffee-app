@@ -1,10 +1,12 @@
 import StyledForm from "./StyledForm";
 import Link from "next/link";
 import { useState } from "react";
+import StyledLabel from "./StyledLabel";
 
 export default function CardForm({ onSubmit, leanCard }) {
   const [topic, setTopic] = useState("");
   const [author, setAuthor] = useState("");
+  const [value, setValue] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -18,32 +20,30 @@ export default function CardForm({ onSubmit, leanCard }) {
   return (
     <>
       <StyledForm onSubmit={handleSubmit}>
-        <label htmlFor="topic">
+        <StyledLabel htmlFor="topic">
           Topic
           <input
             name="topic"
             id="topic"
             type="text"
-            placeholder={leanCard.topic}
             value={topic}
             onChange={(event) => {
               setTopic(event.target.value);
             }}
           />
-        </label>
-        <label htmlFor="author">
+        </StyledLabel>
+        <StyledLabel htmlFor="author">
           Author
           <input
             name="author"
             id="author"
             type="text"
-            placeholder={leanCard.author}
             value={author}
             onChange={(event) => {
               setAuthor(event.target.value);
             }}
           />
-        </label>
+        </StyledLabel>
         <button type="submit" variant="submit">
           Submit
         </button>
