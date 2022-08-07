@@ -27,6 +27,7 @@ export default function Home({ leanCards }) {
             <StyledCard key={card.id}>
               <p>{card.topic}</p>
               <p>{card.author}</p>
+              <button>Edit</button>
             </StyledCard>
           );
         })}
