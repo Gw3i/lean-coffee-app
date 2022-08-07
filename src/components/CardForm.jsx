@@ -38,7 +38,9 @@ export default function CardForm({ onSubmit }) {
             }}
           />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit" variant="submit">
+          Submit
+        </button>
       </StyledForm>
       <Link href="/">
         <a>
