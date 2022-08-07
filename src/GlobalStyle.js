@@ -25,6 +25,7 @@ p, label  {
 
 h1 {
   font-size: 3.6rem;
+  margin-top: 0;
 }
 
 h2 {

@@ -2,6 +2,7 @@ import StyledForm from "./StyledForm";
 import Link from "next/link";
 import { useState } from "react";
 import StyledLabel from "./StyledLabel";
+import { useRouter } from "next/router";
 
 export default function CardForm({ onSubmit, leanCard }) {
   const [topic, setTopic] = useState("");
@@ -17,6 +18,9 @@ export default function CardForm({ onSubmit, leanCard }) {
     });
   }
 
+  const router = useRouter();
+  console.log(router.route);
+
   return (
     <>
       <StyledForm onSubmit={handleSubmit}>
@@ -26,7 +30,7 @@ export default function CardForm({ onSubmit, leanCard }) {
             name="topic"
             id="topic"
             type="text"
-            value={topic}
+            value={router.route === "/create-card" ? topic : leanCard.topic}
             onChange={(event) => {
               setTopic(event.target.value);
             }}
@@ -38,7 +42,7 @@ export default function CardForm({ onSubmit, leanCard }) {
             name="author"
             id="author"
             type="text"
-            value={author}
+            value={router.route === "/create-card" ? author : leanCard.author}
             onChange={(event) => {
               setAuthor(event.target.value);
             }}

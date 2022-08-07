@@ -18,6 +18,7 @@ export default function Home({ leanCards }) {
       <Head>
         <title>Lean Coffee App</title>
       </Head>
+      <h1>Lean Coffee App</h1>
       <Nav />
       <StyledMain>
         {leanCards.map((card) => {
