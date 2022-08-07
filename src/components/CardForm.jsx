@@ -2,7 +2,7 @@ import StyledForm from "./StyledForm";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function CardForm({ onSubmit, leanCards }) {
+export default function CardForm({ onSubmit, leanCard }) {
   const [topic, setTopic] = useState("");
   const [author, setAuthor] = useState("");
 
@@ -18,9 +18,11 @@ export default function CardForm({ onSubmit, leanCards }) {
   return (
     <>
       <StyledForm onSubmit={handleSubmit}>
-        <label>
+        <label htmlFor="topic">
           Topic
           <input
+            name="topic"
+            id="topic"
             type="text"
             value={topic}
             onChange={(event) => {
@@ -28,9 +30,11 @@ export default function CardForm({ onSubmit, leanCards }) {
             }}
           />
         </label>
-        <label>
+        <label htmlFor="author">
           Author
           <input
+            name="author"
+            id="author"
             type="text"
             value={author}
             onChange={(event) => {

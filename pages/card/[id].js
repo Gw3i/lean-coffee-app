@@ -28,7 +28,7 @@ export default function EditCard({ leanCard }) {
 
   return (
     <>
-      <CardForm onSubmit={handleSubmit} />
+      <CardForm onSubmit={handleSubmit} leanCard={leanCard} />
     </>
   );
 }
