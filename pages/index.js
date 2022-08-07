@@ -4,6 +4,7 @@ import StyledMain from "../src/components/StyledMain";
 import Nav from "../src/components/Nav";
 import { getAllLeanCards } from "../src/components/services/leanCardsService";
 import StyledCard from "../src/components/StyledCard";
+import Link from "next/link";
 
 export async function getStaticProps() {
   const leanCards = await getAllLeanCards();
@@ -27,7 +28,11 @@ export default function Home({ leanCards }) {
             <StyledCard key={card.id}>
               <p>{card.topic}</p>
               <p>{card.author}</p>
-              <button>Edit</button>
+              <Link href="/edit-card">
+                <a>
+                  <button>Edit</button>
+                </a>
+              </Link>
             </StyledCard>
           );
         })}
