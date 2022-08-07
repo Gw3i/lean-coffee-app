@@ -2,7 +2,7 @@ import StyledForm from "./StyledForm";
 import Link from "next/link";
 import { useState } from "react";
 
-export default function CardForm({ onSubmit }) {
+export default function CardForm({ onSubmit, leanCards }) {
   const [topic, setTopic] = useState("");
   const [author, setAuthor] = useState("");
 

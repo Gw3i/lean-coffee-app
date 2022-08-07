@@ -10,3 +10,18 @@ export async function getAllLeanCards() {
     return { id, topic, author };
   });
 }
+
+export async function getLeanCardById(id_) {
+  await dbConnect();
+
+  const leanCard = await LeanCard.findById(id_);
+
+  const { id, topic, author } = leanCard;
+
+  console.log(leanCard.id);
+  return {
+    id,
+    topic,
+    author,
+  };
+}

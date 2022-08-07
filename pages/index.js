@@ -23,12 +23,11 @@ export default function Home({ leanCards }) {
       <StyledMain>
         {/* <Card /> */}
         {leanCards.map((card) => {
-          console.log(card);
           return (
             <StyledCard key={card.id}>
               <p>{card.topic}</p>
               <p>{card.author}</p>
-              <Link href="/edit-card">
+              <Link href={`/card/${card.id}`}>
                 <a>
                   <button>Edit</button>
                 </a>
