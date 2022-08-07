@@ -1,21 +1,16 @@
-// import { getAllLeanCards } from "../components/services/leanCardsService";
-// import StyledCard from "../components/StyledCard";
+import StyledCard from "./StyledCard";
+import Link from "next/link";
 
-// export async function getStaticProps() {
-//   const leanCards = await getAllLeanCards();
-//   return {
-//     props: { leanCards },
-//   };
-// }
-
-// export default function Card({ leanCards }) {
-//   leanCards.map((card) => {
-//     console.log(card);
-//     return (
-//       <StyledCard key={card.id}>
-//         <p>{card.topic}</p>
-//         <p>{card.author}</p>
-//       </StyledCard>
-//     );
-//   });
-// }
+export default function Card({ card }) {
+  return (
+    <StyledCard key={card.id}>
+      <p>{card.topic}</p>
+      <p>{card.author}</p>
+      <Link href={`/card/${card.id}`}>
+        <a>
+          <button>Edit</button>
+        </a>
+      </Link>
+    </StyledCard>
+  );
+}

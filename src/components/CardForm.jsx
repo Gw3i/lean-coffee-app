@@ -24,6 +24,7 @@ export default function CardForm({ onSubmit, leanCard }) {
             name="topic"
             id="topic"
             type="text"
+            placeholder={leanCard.topic}
             value={topic}
             onChange={(event) => {
               setTopic(event.target.value);
@@ -36,6 +37,7 @@ export default function CardForm({ onSubmit, leanCard }) {
             name="author"
             id="author"
             type="text"
+            placeholder={leanCard.author}
             value={author}
             onChange={(event) => {
               setAuthor(event.target.value);

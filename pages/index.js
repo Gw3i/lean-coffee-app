@@ -24,17 +24,7 @@ export default function Home({ leanCards }) {
       <StyledMain>
         {/* <Card /> */}
         {leanCards.map((card) => {
-          return (
-            <StyledCard key={card.id}>
-              <p>{card.topic}</p>
-              <p>{card.author}</p>
-              <Link href={`/card/${card.id}`}>
-                <a>
-                  <button>Edit</button>
-                </a>
-              </Link>
-            </StyledCard>
-          );
+          return <Card key={card.is} card={card} />;
         })}
       </StyledMain>
     </>
