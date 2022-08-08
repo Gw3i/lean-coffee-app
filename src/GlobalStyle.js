@@ -13,6 +13,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  font-size: 1.6rem;
 }
 
 * {

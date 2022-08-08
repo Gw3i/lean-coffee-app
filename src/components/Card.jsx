@@ -1,5 +1,6 @@
 import StyledCard from "./StyledCard";
 import Link from "next/link";
+import StyledLink from "./StyledLink";
 
 export default function Card({ card }) {
   return (
@@ -7,9 +8,7 @@ export default function Card({ card }) {
       <p>{card.topic}</p>
       <p>{card.author}</p>
       <Link href={`/card/${card.id}`}>
-        <a>
-          <button>Edit</button>
-        </a>
+        <StyledLink>Edit</StyledLink>
       </Link>
     </StyledCard>
   );
