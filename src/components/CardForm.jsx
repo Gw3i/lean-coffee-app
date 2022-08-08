@@ -2,6 +2,7 @@ import StyledForm from "./StyledForm";
 import Link from "next/link";
 import { useState } from "react";
 import StyledLabel from "./StyledLabel";
+import StyledLink from "./StyledLink";
 
 export default function CardForm({ onSubmit, leanCard }) {
   const [topic, setTopic] = useState(leanCard?.topic || "");
@@ -50,9 +51,7 @@ export default function CardForm({ onSubmit, leanCard }) {
         </button>
       </StyledForm>
       <Link href="/">
-        <a>
-          <button>Cancel</button>
-        </a>
+        <StyledLink>Cancel</StyledLink>
       </Link>
     </>
   );
