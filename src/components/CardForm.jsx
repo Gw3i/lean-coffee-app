@@ -46,6 +46,11 @@ export default function CardForm({ onSubmit, leanCard }) {
             }}
           />
         </StyledLabel>
+        <select>
+          <option value=""></option>
+          <option value=""></option>
+          <option value=""></option>
+        </select>
         <button type="submit" variant="submit">
           Submit
         </button>
