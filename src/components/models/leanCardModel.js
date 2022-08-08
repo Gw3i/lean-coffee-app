@@ -7,6 +7,6 @@ const leanCardSchema = new Schema({
 });
 
 const LeanCard =
-  mongoose.models.LeanCard || mongoose.model("LeanCard", leanCardSchema);
+  mongoose?.models?.LeanCard || mongoose.model("LeanCard", leanCardSchema);
 
 export default LeanCard;
