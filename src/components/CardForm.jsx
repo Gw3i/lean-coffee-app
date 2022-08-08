@@ -2,12 +2,10 @@ import StyledForm from "./StyledForm";
 import Link from "next/link";
 import { useState } from "react";
 import StyledLabel from "./StyledLabel";
-import { useRouter } from "next/router";
 
 export default function CardForm({ onSubmit, leanCard }) {
-  const [topic, setTopic] = useState("");
-  const [author, setAuthor] = useState("");
-  const [value, setValue] = useState("");
+  const [topic, setTopic] = useState(leanCard?.topic || "");
+  const [author, setAuthor] = useState(leanCard?.author || "");
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -18,19 +16,17 @@ export default function CardForm({ onSubmit, leanCard }) {
     });
   }
 
-  const router = useRouter();
-  console.log(router.route);
-
   return (
     <>
       <StyledForm onSubmit={handleSubmit}>
         <StyledLabel htmlFor="topic">
           Topic
           <input
+            required
             name="topic"
             id="topic"
             type="text"
-            value={router.route === "/create-card" ? topic : leanCard.topic}
+            value={topic}
             onChange={(event) => {
               setTopic(event.target.value);
             }}
@@ -39,10 +35,11 @@ export default function CardForm({ onSubmit, leanCard }) {
         <StyledLabel htmlFor="author">
           Author
           <input
+            required
             name="author"
             id="author"
             type="text"
-            value={router.route === "/create-card" ? author : leanCard.author}
+            value={author}
             onChange={(event) => {
               setAuthor(event.target.value);
             }}
