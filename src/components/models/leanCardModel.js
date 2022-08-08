@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 const leanCardSchema = new Schema({
   topic: { type: String, required: true },
   author: { type: String, required: true },
-  category: { type: Schema.Types.ObjectId, ref: "LeanCategory" },
+  category: { type: Schema.Types.ObjectId, ref: "Category" },
 });
 
 const LeanCard =

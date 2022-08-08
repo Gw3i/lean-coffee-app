@@ -5,8 +5,8 @@ const leanCategoriesSchema = new Schema({
   name: { type: String, required: true },
 });
 
-const LeanCategory =
-  mongoose?.models?.LeanCategory ||
-  mongoose.model("LeanCategory", leanCategoriesSchema);
+const Category =
+  mongoose?.models?.Category ||
+  mongoose.model("Category", leanCategoriesSchema);
 
-export default LeanCategory;
+export default Category;
