@@ -1,15 +1,16 @@
 import StyledCard from "./StyledCard";
 import StyledLink from "./StyledLink";
 import Link from "next/link";
+import StyledButton from "./StyledButton";
 
 export default function DeleteCard({ card, onDelete }) {
   return (
     <>
       <StyledCard>
-        <p>Are you sure you want to delete this Card?</p>
+        <h2>Are you sure you want to delete this Card?</h2>
         <p>{card.topic}</p>
         <p>{card.author}</p>
-        <button onClick={onDelete}>Submit</button>
+        <StyledButton onClick={onDelete}>Submit</StyledButton>
         <Link href="/">
           <StyledLink>Cancel</StyledLink>
         </Link>
