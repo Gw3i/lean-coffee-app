@@ -10,6 +10,9 @@ export default function Card({ card }) {
       <Link href={`/card/${card.id}`}>
         <StyledLink>Edit</StyledLink>
       </Link>
+      <Link href={`/delete/${card.id}`}>
+        <StyledLink>Delete</StyledLink>
+      </Link>
     </StyledCard>
   );
 }

@@ -4,7 +4,8 @@ const StyledLink = styled.a`
   border: 1px solid black;
   border-radius: 5px;
   background: none;
-  padding: 8px 10px;
+  padding: 5px 10px;
+  cursor: pointer;
 
   &:hover {
     background-color: lightgrey;
