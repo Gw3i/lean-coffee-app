@@ -13,6 +13,7 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  font-size: 1.6rem;
 }
 
 * {
@@ -25,6 +26,7 @@ p, label  {
 
 h1 {
   font-size: 3.6rem;
+  margin-top: 0;
 }
 
 h2 {

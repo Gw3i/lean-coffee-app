@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-const StyledButton = styled.button`
+const StyledLink = styled.a`
   border: 1px solid black;
   border-radius: 5px;
   background: none;
@@ -11,4 +11,4 @@ const StyledButton = styled.button`
   }
 `;
 
-export default StyledButton;
+export default StyledLink;

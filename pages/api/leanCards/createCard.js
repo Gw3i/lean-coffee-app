@@ -13,4 +13,13 @@ export default async function handler(request, response) {
       message: "New lean card created",
     });
   }
+  // } else if (request.method === "PUT") {
+  //   const data = JSON.parse(request.body);
+
+  //   await LeanCard.findByIdAndUpdate(id, data);
+
+  //   response.status(200).json({
+  //     message: "New lean card created",
+  //   });
+  // }
 }
