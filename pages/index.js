@@ -3,7 +3,8 @@ import Card from "../src/components/Card";
 import StyledMain from "../src/components/StyledMain";
 import Nav from "../src/components/Nav";
 import { getAllLeanCards } from "../src/components/services/leanCardsService";
-import Category from "../src/components/Category";
+import Categories from "../src/components/Categories";
+import { getAllCategories } from "../src/components/services/categoryServices";
 
 export async function getStaticProps() {
   const leanCards = await getAllLeanCards();
@@ -13,7 +14,7 @@ export async function getStaticProps() {
   };
 }
 
-export default function Home({ leanCards }) {
+export default function Home({ leanCards, categories }) {
   return (
     <>
       <Head>
@@ -22,7 +23,7 @@ export default function Home({ leanCards }) {
       <h1>Lean Coffee App</h1>
       <Nav />
       <StyledMain>
-        <Category />
+        <Categories />
         {leanCards.map((card) => {
           return <Card key={card.id} card={card} />;
         })}

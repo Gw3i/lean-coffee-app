@@ -4,7 +4,7 @@ import { useState } from "react";
 import StyledLabel from "./StyledLabel";
 import StyledLink from "./StyledLink";
 
-export default function CardForm({ onSubmit, leanCard }) {
+export default function CardForm({ onSubmit, leanCard, categories }) {
   const [topic, setTopic] = useState(leanCard?.topic || "");
   const [author, setAuthor] = useState(leanCard?.author || "");
 
@@ -47,9 +47,11 @@ export default function CardForm({ onSubmit, leanCard }) {
           />
         </StyledLabel>
         <select>
-          <option value=""></option>
-          <option value=""></option>
-          <option value=""></option>
+          {categories?.map((category) => {
+            <option key={category.id} value={category.id}>
+              {category.name}
+            </option>;
+          })}
         </select>
         <button type="submit" variant="submit">
           Submit

@@ -4,11 +4,17 @@ import LeanCard from "../models/leanCardModel";
 export async function getAllLeanCards() {
   await dbConnect();
 
-  const leanCards = await LeanCard.find();
+  const leanCards = await LeanCard.find().populate("category");
 
-
-  return leanCards.map(({ id, topic, author }) => {
-    return { id, topic, author };
+  return leanCards.map(({ id, topic, author, category }) => {
+    return {
+      id,
+      topic,
+      author,
+      // category: {
+      //   name: category.name,
+      // },
+    };
   });
 }
 
@@ -17,12 +23,16 @@ export async function getLeanCardById(id_) {
 
   const leanCard = await LeanCard.findById(id_);
 
-  const { id, topic, author } = leanCard;
+  const { id, topic, author, category } = leanCard;
 
   console.log(leanCard.id);
   return {
     id,
     topic,
     author,
+    // category: {
+    //   name: category.name,
+    //   categoryId: category.id,
+    // },
   };
 }
