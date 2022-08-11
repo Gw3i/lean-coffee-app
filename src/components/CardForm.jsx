@@ -7,6 +7,7 @@ import StyledLink from "./StyledLink";
 export default function CardForm({ onSubmit, leanCard, categories }) {
   const [topic, setTopic] = useState(leanCard?.topic || "");
   const [author, setAuthor] = useState(leanCard?.author || "");
+  const [category, setCategory] = useState(leanCard?.category || '')
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -14,8 +15,11 @@ export default function CardForm({ onSubmit, leanCard, categories }) {
     onSubmit({
       topic,
       author,
+      category
     });
   }
+
+
 
   return (
     <>
@@ -46,13 +50,21 @@ export default function CardForm({ onSubmit, leanCard, categories }) {
             }}
           />
         </StyledLabel>
-        <select>
-          {categories?.map((category) => {
-            <option key={category.id} value={category.id}>
-              {category.name}
-            </option>;
-          })}
-        </select>
+        <StyledLabel>Category
+        <select
+            name="category"
+            value={category}
+            onChange={(event) => {
+              setCategory(event.target.value);
+            }}
+          >
+            {categories.map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.name}
+              </option>
+            ))}
+          </select>
+        </StyledLabel>
         <button type="submit" variant="submit">
           Submit
         </button>

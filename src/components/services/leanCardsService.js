@@ -7,11 +7,14 @@ export async function getAllLeanCards() {
   const leanCards = await LeanCard.find().populate("category");
 
   return leanCards.map(({ id, topic, author, category }) => {
+
+    console.log(category)
     return {
       id,
       topic,
       author,
       // category: {
+      //   id: category.id,
       //   name: category.name,
       // },
     };
@@ -25,14 +28,13 @@ export async function getLeanCardById(id_) {
 
   const { id, topic, author, category } = leanCard;
 
-  console.log(leanCard.id);
   return {
     id,
     topic,
     author,
-    // category: {
-    //   name: category.name,
-    //   categoryId: category.id,
-    // },
+    category: {
+      name: category.name,
+      categoryId: category.id,
+    },
   };
 }

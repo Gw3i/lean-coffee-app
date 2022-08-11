@@ -5,7 +5,7 @@ import "./leanCategoriesModel";
 const leanCardSchema = new Schema({
   topic: { type: String, required: true },
   author: { type: String, required: true },
-  category: { type: Schema.Types.ObjectId, ref: "Category" },
+  category: { type: Schema.Types.ObjectId, ref: 'Category' },
 });
 
 const LeanCard =

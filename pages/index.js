@@ -26,7 +26,7 @@ export default function Home({ leanCards, categories }) {
       <StyledMain>
         <Categories categories={categories} />
         {leanCards.map((card) => {
-          return <Card key={card.id} card={card} />;
+          return <Card key={card.id} card={card} categories={categories}/>;
         })}
       </StyledMain>
     </>
