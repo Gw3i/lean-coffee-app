@@ -1,12 +1,14 @@
+import StyledLi from "./StyledLi";
+import StyledUl from "./StyledUl";
+
 export default function Categories({ categories }) {
-  console.log(categories);
   return (
     <>
-      <ul>
+      <StyledUl>
         {categories.map((category) => {
-          return <li key={category.id}>{category.name}</li>;
+          return <StyledLi key={category.id}>{category.name}</StyledLi>;
         })}
-      </ul>
+      </StyledUl>
     </>
   );
 }

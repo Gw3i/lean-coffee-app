@@ -10,15 +10,12 @@ export async function getServerSideProps() {
   const leanCards = await getAllLeanCards();
   const categories = await getAllCategories();
 
-  console.log(categories);
-
   return {
     props: { leanCards, categories },
   };
 }
 
 export default function Home({ leanCards, categories }) {
-  console.log(categories);
   return (
     <>
       <Head>
