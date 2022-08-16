@@ -20,8 +20,6 @@ export default function EditCard({ leanCard, categories }) {
   const router = useRouter();
   const fetchAPI = useFetch();
 
-  console.log(categories);
-  console.log(leanCard);
 
   async function handleSubmit(data) {
     await fetchAPI(`/api/leanCards/${leanCard.id}`, {

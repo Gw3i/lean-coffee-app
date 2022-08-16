@@ -8,7 +8,6 @@ export async function getAllLeanCards() {
 
   return leanCards.map(({ id, topic, author, category }) => {
 
-    console.log(category)
     return {
       id,
       topic,
@@ -32,9 +31,9 @@ export async function getLeanCardById(id_) {
     id,
     topic,
     author,
-    category: {
-      name: category.name,
-      categoryId: category.id,
-    },
+    // category: {
+    //   name: category.name,
+    //   categoryId: category.id,
+    // },
   };
 }
